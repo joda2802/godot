@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
+
+[node name="Enemy" type="Sprite"]
+
+position = Vector2( 4400, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+

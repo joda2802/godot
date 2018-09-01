@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/MainGame.gd" type="Script" id=1]
+[ext_resource path="res://img-20180828T202910Z-001/img/Lane/PlaneLane.png" type="Texture" id=2]
+[ext_resource path="res://img-20180828T202910Z-001/img/Lane/SkyLane.png" type="Texture" id=3]
+[ext_resource path="res://img-20180828T202910Z-001/img/Lane/GroundLane.png" type="Texture" id=4]
+[ext_resource path="res://img-20180828T202910Z-001/img/BetaBeatle.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+
+[node name="Main" type="Node2D"]
+
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 5, 5 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="Background" type="Node2D" parent="." index="1"]
+
+[node name="Sprite" type="Sprite" parent="Background" index="0"]
+
+scale = Vector2( 5, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="Background" index="1"]
+
+position = Vector2( 0, -1080 )
+scale = Vector2( 5, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="Background" index="2"]
+
+position = Vector2( 0, 1080 )
+scale = Vector2( 5, 1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Allies" type="Node2D" parent="." index="2"]
+
+[node name="Enemies" type="Node2D" parent="." index="3"]
+
+[node name="Gui" type="Node2D" parent="." index="4"]
+
+[node name="TextureButton" type="TextureButton" parent="Gui" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -4550.0
+margin_top = 440.0
+margin_right = -2630.0
+margin_bottom = 1520.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+expand = true
+_sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="TextureButton2" type="TextureButton" parent="Gui" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2940.0
+margin_top = 430.0
+margin_right = 4360.0
+margin_bottom = 1474.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[connection signal="pressed" from="Gui/TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[connection signal="pressed" from="Gui/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+
+
